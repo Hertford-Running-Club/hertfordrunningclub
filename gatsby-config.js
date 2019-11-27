@@ -16,7 +16,7 @@ module.exports = {
         sitemap: 'https://www.hertfordrunningclub.co.uk/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }]
       }
-    }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
