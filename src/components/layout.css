@@ -42,6 +42,8 @@ template {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+  text-decoration: none;
+  color: unset;
 }
 a:active,
 a:hover {
@@ -208,6 +210,9 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
+}
+section {
+  padding: 0.5em 0;
 }
 img {
   max-width: 100%;
