@@ -1,0 +1,41 @@
+/* This file is for overriding the default css 
+in the experiences carousel.  */
+@import "../../basestyles.scss";
+
+.slick-slider button {
+    box-shadow: 0 0 0 black;
+  }
+
+@media (min-width: 767px) {
+  .slick-slider {
+    padding: 0 1.5em;
+  }
+
+  .slick-arrow {
+    z-index: 1000;
+    transform: scale(1.5);
+    transition: all ease-in-out 0.7s;
+  }
+
+  .slick-arrow:hover {
+    transform: scale(2.5);
+  }
+
+  .slick-prev {
+    left: 1em;
+  }
+
+  .slick-next {
+    right: 1em;
+    box-shadow: 0 0 0 black;
+  }
+  .slick-prev:before,
+  .slick-next:before {
+    color: $primary1 !important;
+  }
+  .slick-dots {
+    width: 90%;
+    margin: 0 auto;
+    bottom: -30px !important;
+  }
+}

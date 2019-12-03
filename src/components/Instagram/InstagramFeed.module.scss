@@ -1,0 +1,213 @@
+.instagramApp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: block;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  max-width: 1200px;
+  margin: 0 auto 3em;
+}
+
+// ================================================
+// ==========   USER Profile Data   ===============
+// ================================================
+
+.instagramUserData {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2.5% auto 0;
+  justify-content: center;
+  // padding: 2%;
+  box-sizing: border-box;
+}
+.instagram__profilepicturecontainer {
+  width: 25%;
+  text-align: center;
+}
+.instagram__profilepicture {
+  border-radius: 100%;
+  width: 100%;
+  max-width: 170px;
+}
+.instagram__content {
+  box-sizing: border-box;
+  padding: 0 0 0 2.55%;
+}
+.instagram__username {
+  // margin-bottom: 20px;
+  margin: 0;
+  text-align: center;
+}
+.instagram__username:hover,
+.instagram__usercounts a:hover p{
+  text-decoration: underline;
+}
+.instagram__usercounts {
+  display: flex;
+  // margin-bottom: 20px;
+  margin: 0;
+}
+.instagram__usercounts strong{
+  font-weight: 600;
+}
+.instagram__usercounts p {
+  // margin-right: 40px;
+  margin: 2em;
+}
+.instagram__bio {
+  max-width: 400px;
+  word-wrap: break-word;
+  margin-bottom: 20px;
+}
+.instagram__website {
+  text-decoration: none;
+}
+
+// ================================================
+// ==============   IMAGES CSS   ==================
+// ================================================
+
+.imageContainer {
+  width: 33.33333%;
+  width: 300px;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all ease-in-out 0.35s;
+}
+
+.imageContainer:hover img {
+  -webkit-filter: brightness(35%);
+  filter: brightness(35%);
+  transform: scale(1.05) rotate(1deg);
+}
+
+.imageContainer:hover {
+  position: relative;
+}
+
+.imageContainer:hover .imageStats {
+  display: block;
+}
+
+.imageFill {
+  width: 100%;
+  padding-bottom: 100%;
+}
+
+.imageStats {
+  width: 100%;
+  text-align: center;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: white;
+}
+.imageStats span {
+  margin: 0em 0.3em;
+}
+.imageStats span svg {
+  margin: 0em 0.2em;
+}
+
+// ================================================
+// ============   LOADING SCREEN   ================
+// ================================================
+
+.loadingScreen {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.loadingScreen .LoadingWidgetContainer img {
+  -webkit-animation: rotating 1s linear infinite;
+  animation: rotating 1s linear infinite;
+  max-width: 100px;
+}
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.loadingScreen .LoadingWidgetContainer {
+  width: 100%;
+  height: 100%;
+  background: #c13584;
+  background: linear-gradient(114deg, rgba(131, 58, 180, 1) 0%, rgba(193, 53, 132, 1) 50%, rgba(225, 48, 108, 1) 100%);
+}
+
+.loadingScreen p {
+  color: white;
+  font-weight: bold;
+}
+
+.loadingScreen .loadingWidget {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+@media only screen and (min-width: 480px) {
+  .imageContainer {
+    width: 25%;
+    position: relative;
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  .imageContainer {
+    width: 20%;
+    position: relative;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .imageContainer{
+    width: 16.666%;
+    position: relative;
+  }
+}

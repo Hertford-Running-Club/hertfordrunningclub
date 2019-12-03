@@ -7,7 +7,7 @@ const ContactForm = () => (
     <p>
       If you have any questions or would like to know more? please contact us
     </p>
-    <form name="contact" method="POST" data-netlify="true">
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
       <div>
         <label>
           <input type="text" name="name" placeholder="Name"/>
@@ -36,6 +36,7 @@ const ContactForm = () => (
       <div>
         <button type="submit">Send</button>
       </div>
+      <div data-netlify-recaptcha="true"></div>
     </form>
   </section>
 )

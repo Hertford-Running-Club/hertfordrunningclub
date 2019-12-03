@@ -1,5 +1,7 @@
 import React from "react"
 import Styles from "./Social.module.scss"
+import InstagramFeed from "../Instagram/InstagramFeed"
+
 
 const Social = () => (
   <section className={Styles.social}>
@@ -17,6 +19,10 @@ const Social = () => (
       We will also be hosting a fundraising event for various charities that we
       are representing at races throughout 2020.
     </p>
+    <hr />
+
+    <InstagramFeed loadUserData={true} NumberPhotosToLoad={15} accessToken={`${process.env.GATSBY_INSTAGRAM_ACCESS_TOKEN}`} / >
+  
   </section>
 )
 
