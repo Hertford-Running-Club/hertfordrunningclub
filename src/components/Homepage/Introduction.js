@@ -1,5 +1,5 @@
 import React from "react"
-import Styles from './introduction.module.scss'
+import Styles from './Introduction.module.scss'
 
 const Introduction = () => (
 <section className={Styles.introduction}>
