@@ -1,8 +1,8 @@
 import React from "react"
-import { Link } from "gatsby"
+import Styles from './introduction.module.scss'
 
 const Introduction = () => (
-<section>
+<section className={Styles.introduction}>
     <h2>About us</h2>
     <p>Founded by Nicole and Joe - two people (not too fast, not too slow) who enjoy running around the streets, fields, hills and parks of Hertford.</p>
     <p>Hertford Running Club is a very friendly, relaxed and welcoming community of runners; from Couch to 5k graduates to experienced runners.</p>

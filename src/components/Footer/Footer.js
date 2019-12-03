@@ -1,20 +1,18 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import Styles from "./Footer.module.scss"
+import InstagramLogo from "./InstagramLogo"
+import StravaLogo from "./StravaLogo.js"
 
-const Footer = ({ siteTitle }) => (
-    <footer>
-    © {new Date().getFullYear()}, 
-    Hertford Running Club
+const Footer = () => (
+  <footer className={Styles.footer}>
+    <div className={Styles.footerprint}>
+      © {new Date().getFullYear()}, Hertford Running Club
+    </div>
+    <div className={Styles.logos}>
+      <StravaLogo />
+      <InstagramLogo />
+    </div>
   </footer>
 )
-
-Footer.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Footer.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Footer

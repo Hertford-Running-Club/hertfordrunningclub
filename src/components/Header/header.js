@@ -1,41 +1,45 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
-import { useStaticQuery } from 'gatsby'
-import SEO from '../seo.js';
+import { useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
+import Styles from "./header.module.scss";
 
-const Header = ({ siteTitle }) => {
+const Header = () => {
   const data = useStaticQuery(graphql`
-  {
-    allContentfulGeneralInformation {
-      edges {
-        node {
-          id
-          siteName
-          metaDescription
+    {
+      allContentfulGeneralInformation {
+        edges {
+          node {
+            id
+            siteName
+            companyLogo {
+              fluid {
+                ...GatsbyContentfulFluid
+              }
+              description
+            }
+          }
         }
       }
     }
-  }
-`)
+  `)
 
+  // Destructing Object
+  const {
+    siteName,
+    companyLogo,
+  } = data.allContentfulGeneralInformation.edges[0].node
 
   return (
-  <header>
-    <div>
-      <h1 style={{ margin: 0 }}>
-        <Link to="/">{siteTitle}</Link>
-      </h1>
-    </div>
-  </header>)
-}
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+    <header className={Styles.header}>
+      <Link to="/">
+        <Img className={Styles.logo} fluid={companyLogo.fluid} alt={companyLogo.description} />
+        </Link>
+        <h1>
+          {siteName}
+        </h1>
+    </header>
+  )
 }
 
 export default Header

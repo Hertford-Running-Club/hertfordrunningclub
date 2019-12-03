@@ -1,0 +1,28 @@
+@import '../../basestyles.scss';
+
+.footer {
+    background: $primary1;
+    color: white;
+    padding: 1em;
+    display: flex;
+    width: 100%;
+}
+
+.footerprint {
+    padding: 0 0.5em 0 0;
+    font-size: 0.8em;
+
+}
+
+.logos {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.logos > a {
+    margin: 0 0.35em;
+    display: flex;
+}
