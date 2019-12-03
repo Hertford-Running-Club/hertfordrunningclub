@@ -1,0 +1,59 @@
+@import '../../basestyles.scss';
+
+.contactform {
+    width:100%;
+    padding:1em;
+    text-align: center;
+}
+
+.contactform form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contactform form div {
+border:none;
+width:100%;
+margin: 0.5em 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+.contactform form div input,
+.contactform form div textarea {
+    width: 100%;
+    padding: 0.75em;
+    padding-left: 1.25em;
+    background: none;
+    border: black solid 1px;
+    box-sizing: border-box;
+    color:black;
+}
+
+.contactform form div input::placeholder,
+.contactform form div textarea::placeholder {
+color: black;
+}
+.contactform form div input {
+
+   
+}
+
+.contactform button {
+    display:block;
+    background: $secondary2;
+    padding: 0.5em 1em;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.3em;
+    width: 50%;
+    margin: 0 auto;
+    transform: translateY(-100%);
+    max-width: 400px;
+    box-shadow: 1px 2px 3px grey;
+}

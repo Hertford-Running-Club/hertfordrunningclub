@@ -20,7 +20,7 @@ export default () => {
     <a href="https://www.instagram.com/hertfordrunningclub/">
       <Img
         fixed={data.placeholderImage.childImageSharp.fixed}
-        alt="Go To Strava Hertford Running Club"
+        alt="Go To Hertford Running Clubs Instagram"
       />
     </a>
   )

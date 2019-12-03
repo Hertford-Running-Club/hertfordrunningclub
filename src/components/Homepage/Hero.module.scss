@@ -3,7 +3,11 @@
 }
 
 .image {
-    filter: brightness(0.99);
+
+}
+
+.image img {
+filter: brightness(0.99);
 }
 .copycontainer {
     // position: absolute;
