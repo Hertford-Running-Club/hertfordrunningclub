@@ -29,10 +29,14 @@ const Events = () => {
       
   `)
 
+  const dataArray = data.allContentfulEvents.edges.map((event) => {
+      console.log(event)
+  })
+
 
   return (
-    <section>
-      <h3>Upcoming Events</h3>
+    <section className={Styles.events}>
+      <h2>Upcoming Events</h2>
     </section>
   )
 }

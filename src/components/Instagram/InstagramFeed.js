@@ -53,36 +53,7 @@ class InstagramFeed extends React.Component {
 
         const { isLoading, isUserDataLoading, error } = this.state
         let InstagramJsonData = this.state.instagramJson
-        const settings = {
-            centerMode: true,
-            dots: true,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            adaptiveHeight: false,
-            arrows: true,
-            responsive: [
-              {
-                breakpoint: 599,
-                settings: {
-                  arrows: false,
-                  centerMode: true,
-                  centerPadding: "40px",
-                  slidesToShow: 4,
-                },
-              },
-              {
-                breakpoint: 767,
-                settings: {
-                  arrows: false,
-                  centerMode: true,
-                  centerPadding: "40px",
-                  slidesToShow: 5,
-                },
-              },
-            ],
-          }
+
         
 
         if (isLoading || isUserDataLoading) {
@@ -154,7 +125,38 @@ class InstagramFeed extends React.Component {
             ))
 
             const instagramUserData = this.state.instagramUserJson.data
-
+            const settings = {
+                centerMode: true,
+                dots: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 6,
+                slidesToScroll: 3,
+                adaptiveHeight: false,
+                arrows: true,
+                responsive: [
+                  {
+                    breakpoint: 599,
+                    settings: {
+                      arrows: false,
+                      centerMode: true,
+                      centerPadding: "40px",
+                      slidesToShow: 2,
+                      slidesToScroll: 1,
+                    },
+                  },
+                  {
+                    breakpoint: 767,
+                    settings: {
+                      arrows: false,
+                      centerMode: true,
+                      centerPadding: "40px",
+                      slidesToShow: 4,
+                      slidesToScroll: 1,
+                    },
+                  },
+                ],
+              }
             return (
 
                 <div className={`${Styles.instagramApp} ${this.props.className}`}>

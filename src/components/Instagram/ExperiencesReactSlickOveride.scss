@@ -6,6 +6,13 @@ in the experiences carousel.  */
     box-shadow: 0 0 0 black;
   }
 
+  .slick-dots {
+    width: 90%;
+    margin: 0 auto;
+    bottom: -3em !important;
+  }
+
+
 @media (min-width: 767px) {
   .slick-slider {
     padding: 0 1.5em;
@@ -33,9 +40,5 @@ in the experiences carousel.  */
   .slick-next:before {
     color: $primary1 !important;
   }
-  .slick-dots {
-    width: 90%;
-    margin: 0 auto;
-    bottom: -30px !important;
-  }
+
 }
