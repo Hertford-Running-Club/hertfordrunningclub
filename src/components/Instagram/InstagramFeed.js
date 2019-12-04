@@ -131,7 +131,7 @@ class InstagramFeed extends React.Component {
                 infinite: true,
                 speed: 500,
                 slidesToShow: 6,
-                slidesToScroll: 3,
+                slidesToScroll: 1,
                 adaptiveHeight: false,
                 arrows: true,
                 responsive: [
@@ -142,7 +142,7 @@ class InstagramFeed extends React.Component {
                       centerMode: true,
                       centerPadding: "40px",
                       slidesToShow: 2,
-                      slidesToScroll: 1,
+                   
                     },
                   },
                   {
@@ -152,7 +152,7 @@ class InstagramFeed extends React.Component {
                       centerMode: true,
                       centerPadding: "40px",
                       slidesToShow: 4,
-                      slidesToScroll: 1,
+                   
                     },
                   },
                 ],

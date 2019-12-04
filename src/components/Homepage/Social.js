@@ -21,7 +21,7 @@ const Social = () => (
     </p>
     <hr />
 
-    <InstagramFeed loadUserData={true} NumberPhotosToLoad={13} accessToken={`${process.env.GATSBY_INSTAGRAM_ACCESS_TOKEN}`} / >
+    <InstagramFeed loadUserData={true} NumberPhotosToLoad={11} accessToken={`${process.env.GATSBY_INSTAGRAM_ACCESS_TOKEN}`} / >
   
   </section>
 )
