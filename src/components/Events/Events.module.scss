@@ -1,3 +1,101 @@
+@import "../../basestyles.scss";
+
 .events {
-    padding: 1em
+  padding: 1em;
+  overflow: hidden;
+}
+
+.event {
+  display: flex !important;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+
+.block1 {
+  border: solid 1px lightgrey;
+  text-align: center;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.date {
+  margin: 0;
+  width: 100%;
+  padding: 0.25em 0.75em;
+  color: $secondary3;
+  font-weight: bold;
+}
+
+.month {
+  border-bottom: 1px lightgrey solid;
+  margin: 0;
+  width: 100%;
+  padding: 0.25em 0.75em;
+  text-transform: uppercase;
+}
+.eventicon {
+  padding: 0.3em 0.2em;
+  max-width: 35px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.eventicon svg {
+  max-height: 20px;
+}
+
+.eventicon:hover {
+  content: "test";
+}
+
+.block2 {
+  display: flex;
+  flex-flow: column;
+  flex-direction: column;
+  vertical-align: top;
+  // align-items: stretch;
+  padding: 0 0.25em 0 1em;
+}
+
+.block2 > * {
+  // flex: 1;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  flex: 1;
+  justify-content: flex-start;
+  margin-bottom: 0.5em;
+}
+
+.time {
+  justify-content: center;
+  margin-bottom: 0.75em;
+}
+
+.link {
+  font-size: 0.85em;
+  justify-content: flex-end;
+
+  &:hover {
+    color: $primary1;
+    letter-spacing: 0.5px;
+    transition: 0.7s ease-in-out;
+  }
+  &:hover::after {
+    position: relative;
+    width: 110px;
+  }
+  &:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: $primary3;
+    letter-spacing: 0.1em;
+    text-align: center;
+    transition: 0.7s ease-in-out;
+  }
 }

@@ -24,8 +24,6 @@ export default () => {
     }
   `)
 
-  console.log(data)
-
   const {
     image,
     title,

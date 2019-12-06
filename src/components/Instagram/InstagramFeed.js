@@ -90,7 +90,7 @@ class InstagramFeed extends React.Component {
                         />
                         <div className={Styles.imageStats}>
                             <span>
-                                <svg width="14px" height="14px" viewBox="0 0 788 726" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns="true" xlink="http://www.w3.org/1999/xlink" name="likes">
+                                <svg width="14px" height="14px" viewBox="0 0 788 726" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" name="likes">
                                     <g id="Blog" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                                         <g id="Artboard" transform="translate(-264.000000, -164.000000)" fill="#FFFFFF">
                                             <g id="Group" transform="translate(657.500000, 400.500000) rotate(315.000000) translate(-657.500000, -400.500000) translate(313.000000, 51.000000)">
@@ -106,7 +106,7 @@ class InstagramFeed extends React.Component {
                             </span>
                             <span>
 
-                                <svg width="18px" height="14px" viewBox="0 0 1006 714" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns="true" xlink="http://www.w3.org/1999/xlink" name="comments">
+                                <svg width="18px" height="14px" viewBox="0 0 1006 714" version="1.1" xlink="http://www.w3.org/1999/xlink" name="comments">
                                     <g id="Blog" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                                         <g id="Artboard" transform="translate(-196.000000, -167.000000)" fill="#FFFFFF">
                                             <g id="Group" transform="translate(98.000000, 167.000000)">

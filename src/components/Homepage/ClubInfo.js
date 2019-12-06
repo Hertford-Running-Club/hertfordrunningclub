@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import Styles from './ClubInfo.module.scss'
 
 const ClubInfo = () => (

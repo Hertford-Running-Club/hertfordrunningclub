@@ -2,6 +2,11 @@
 in the experiences carousel.  */
 @import "../../basestyles.scss";
 
+.slick-slider {
+  margin: 0 0 2em;
+}
+
+
 .slick-slider button {
     box-shadow: 0 0 0 black;
   }
@@ -25,15 +30,15 @@ in the experiences carousel.  */
   }
 
   .slick-arrow:hover {
-    transform: scale(2.5);
+    transform: scale(2);
   }
 
-  .slick-prev {
-    left: 1em;
+  .slick-slider .slick-prev {
+    left: -10px;
   }
 
-  .slick-next {
-    right: 1em;
+  .slick-slider .slick-next {
+    right: -10px;
     box-shadow: 0 0 0 black;
   }
   .slick-prev:before,
