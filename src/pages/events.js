@@ -1,15 +1,19 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
-import Styles from "../components/Events/Events.module.scss"
-import RunIcon from "../components/Events/svgs/RunIcon"
-import RideIcon from "../components/Events/svgs/RideIcon"
+import Styles from "../components/Events/EventsPage.module.scss"
+import RunIcon from "../images/svgs/RunIcon"
+import RideIcon from "../images/svgs/RideIcon"
 import "../components/Instagram/ExperiencesReactSlickOveride.scss"
-import WalkIcon from "../components/Events/svgs/WalkIcon"
-import MeetingIcon from "../components/Events/svgs/MeetingIcon"
-import SocialIcon from "../components/Events/svgs/SocialIcon"
+import WalkIcon from "../images/svgs/WalkIcon"
+import MeetingIcon from "../images/svgs/MeetingIcon"
+import SocialIcon from "../images/svgs/SocialIcon"
+import LocationIcon from "../images/svgs/LocationIcon"
+import ClockIcon from "../images/svgs/ClockIcon"
+import TerrainIcon from "../images/svgs/TerrainIcon"
 
 const Events = () => {
+
   const data = useStaticQuery(graphql`
     {
       allContentfulEvents {
@@ -182,12 +186,15 @@ const Events = () => {
           <h2>Events</h2>
 
         {upcomingEvents.map(event => {
-          const { id, eventType, eventTitle, date, time } = event
+          const { id, eventType, eventTitle, date, meetUpAddress:address, time, terrain } = event
           return (
             <div key={id} className={Styles.event}>
               <div className={Styles.block1}>
+                <div className={Styles.datecontainer}>
                 <p className={Styles.date}>{date.substr(8, 2)}</p>
                 <p className={Styles.month}>{months[date.substr(5, 2) - 1]}</p>
+                <p className={Styles.year}>{date.substr(0, 4)}</p>
+                </div>
                 <div className={Styles.eventicon}>
                   {eventType === "Run" ? (
                     <RunIcon />
@@ -204,10 +211,15 @@ const Events = () => {
               </div>
               <div className={Styles.block2}>
                 <h4 className={Styles.title}>{eventTitle}</h4>
-                {console.log(time)}
-                <h6 className={Styles.time}>{time}</h6>
+                
+                <p className={Styles.time}> <ClockIcon /> {time}</p>
+                  <p className={Styles.location}><LocationIcon/> {address}</p>
+        <p className={Styles.terrain}>{eventType} | <TerrainIcon /> {terrain} </p>
+
                 <Link to={`events/${id.substr(0, 8)}`} className={Styles.link}>
+                  <button className={Styles.linkbtn}>
                   Full Details &#8594;
+                  </button>
                 </Link>
               </div>
             </div>

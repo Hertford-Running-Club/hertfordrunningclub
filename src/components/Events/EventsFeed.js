@@ -1,13 +1,14 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Slider from "react-slick"
-import Styles from "./Events.module.scss"
-import RunIcon from "./svgs/RunIcon"
-import RideIcon from "./svgs/RideIcon"
+import Styles from "./EventsFeed.module.scss"
+import RunIcon from "../../images/svgs/RunIcon"
+import RideIcon from "../../images/svgs/RideIcon"
 import "../Instagram/ExperiencesReactSlickOveride.scss"
-import WalkIcon from "./svgs/WalkIcon"
-import MeetingIcon from "./svgs/MeetingIcon"
-import SocialIcon from "./svgs/SocialIcon"
+import WalkIcon from "../../images/svgs/WalkIcon"
+import MeetingIcon from "../../images/svgs/MeetingIcon"
+import SocialIcon from "../../images/svgs/SocialIcon"
+import ClockIcon from "../../images/svgs/ClockIcon"
 
 const Events = () => {
   const data = useStaticQuery(graphql`
@@ -236,7 +237,7 @@ const Events = () => {
               <div className={Styles.block2}>
                 <h4 className={Styles.title}>{eventTitle}</h4>
                 {console.log(time)}
-                <h6 className={Styles.time}>{time}</h6>
+                <h6 className={Styles.time}><ClockIcon /> {time}</h6>
                 <Link to={`events/${id.substr(0, 8)}`} className={Styles.link}>
                   Full Details &#8594;
                 </Link>

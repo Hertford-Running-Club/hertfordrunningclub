@@ -73,6 +73,11 @@
 .time {
   justify-content: center;
   margin-bottom: 0.75em;
+  display: inline-block;
+}
+
+.time svg{
+  max-width: 13px;
 }
 
 .link {
