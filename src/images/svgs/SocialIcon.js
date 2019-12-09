@@ -4,7 +4,6 @@ export default () => {
   return (
     <svg
       title="Social"
-      width="100%"
       viewBox="0 0 120 121"
       version="1.1"
       xmlnsXlink="http://www.w3.org/1999/xlink"

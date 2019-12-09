@@ -4,8 +4,7 @@ export default () => {
   return (
     <svg
       title="Ride"
-      width="100%"
-      viewBox="0 0 159 90"
+      viewBox="0 0 160 100"
       version="1.1"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       xmlns="http://www.w3.org/2000/svg"

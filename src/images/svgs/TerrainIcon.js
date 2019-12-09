@@ -3,7 +3,6 @@ import React from "react"
 export default () => {
   return (
     <svg
-      width="100%"
       viewBox="0 0 184 105"
       version="1.1"
       xmlnsXlink="http://www.w3.org/1999/xlink"
