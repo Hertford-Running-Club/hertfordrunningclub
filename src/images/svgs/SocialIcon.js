@@ -1,6 +1,6 @@
 import React from "react"
 
-export default () => {
+export default (props) => {
   return (
     <svg
       title="Social"
@@ -9,7 +9,7 @@ export default () => {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g id="cocktail">
+      <g id={props.id}>
         <g id="Group" transform="translate(0 -3.051758E-05)">
           <g id="Group">
             <path

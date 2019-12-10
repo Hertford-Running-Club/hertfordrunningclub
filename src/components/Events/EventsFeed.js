@@ -222,15 +222,15 @@ const Events = () => {
                 <p className={Styles.month}>{months[date.substr(5, 2) - 1]}</p>
                 <div className={Styles.eventicon}>
                   {eventType === "Run" ? (
-                    <RunIcon />
+                    <RunIcon id={id} />
                   ) : eventType === "Ride" ? (
-                    <RideIcon />
+                    <RideIcon id={id}  />
                   ) : eventType === "Walk" ? (
-                    <WalkIcon />
+                    <WalkIcon id={id} />
                   ) : eventType === "Meeting" ? (
-                    <MeetingIcon />
+                    <MeetingIcon id={id} />
                   ) : eventType === "Social" ? (
-                    <SocialIcon />
+                    <SocialIcon id={id} />
                   ) : null}
                 </div>
               </div>
