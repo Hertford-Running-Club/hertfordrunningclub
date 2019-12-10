@@ -221,6 +221,7 @@ const Events = () => {
                 <p className={Styles.date}>{date.substr(8, 2)}</p>
                 <p className={Styles.month}>{months[date.substr(5, 2) - 1]}</p>
                 <div className={Styles.eventicon}>
+                  {console.log(eventType)}
                   {eventType === "Run" ? (
                     <RunIcon id={id} />
                   ) : eventType === "Ride" ? (
@@ -236,7 +237,6 @@ const Events = () => {
               </div>
               <div className={Styles.block2}>
                 <h4 className={Styles.title}>{eventTitle}</h4>
-                {console.log(time)}
                 <h6 className={Styles.time}><ClockIcon /> {time}</h6>
                 <Link to={`events/${id.substr(0, 8)}`} className={Styles.link}>
                   Full Details &#8594;
