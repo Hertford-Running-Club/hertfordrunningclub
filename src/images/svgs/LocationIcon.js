@@ -3,6 +3,7 @@ import React from "react"
 export default (props) => {
   return (
     <svg
+    id={`${props.id + "svg"}`}
       viewBox="0 0 72 99"
       version="1.1"
       xmlnsXlink="http://www.w3.org/1999/xlink"

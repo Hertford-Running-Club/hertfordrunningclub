@@ -3,6 +3,7 @@ import React from "react"
 export default (props) => {
   return (
     <svg
+    id={`${props.id + "svg"}`}
       title="Ride"
       viewBox="0 0 160 100"
       version="1.1"
