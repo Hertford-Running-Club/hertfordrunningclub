@@ -56,12 +56,10 @@
   flex-flow: column;
   flex-direction: column;
   vertical-align: top;
-  // align-items: stretch;
   padding: 0 0.25em 0 1em;
 }
 
 .block2 > * {
-  // flex: 1;
   margin: 0;
   display: flex;
   flex-direction: column;

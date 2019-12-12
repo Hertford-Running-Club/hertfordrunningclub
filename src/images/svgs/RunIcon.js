@@ -2,7 +2,7 @@ import React from "react"
 
 
 export default (props) => {
-
+  
   return (
     <svg
     id={`${props.id + "svg"}`}

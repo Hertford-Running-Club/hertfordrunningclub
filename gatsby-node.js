@@ -45,17 +45,23 @@ const EventTemplate = path.resolve(
   )
   // Create pages for each Contentful Recurring Events
   result.data.allContentfulRecurringEvents.edges.forEach(({ node }) => {
-    
-    const path = `events/${node.id.substr(0, 8)}`
-    createPage({
-      path,
-      component: EventTemplate,
-      // In your template's graphql query, you can use path
-      // as a GraphQL variable to query for data from the markdown file.
-      context: {
-        eventid: node.id,
-      },
-    })
+    console.log(node)
+
+    for (let index = 1; index < 3; index++) {
+      const path = `events/${node.id.substr(0, 8)}/week${index}`
+      createPage({
+        path,
+        component: EventTemplate,
+        // In your template's graphql query, you can use path
+        // as a GraphQL variable to query for data from the markdown file.
+        context: {
+          eventid: node.id,
+          week: index
+        },
+      })
+      
+    }
+
   })
 
   result.data.allContentfulEvents.edges.forEach(({ node }) => {

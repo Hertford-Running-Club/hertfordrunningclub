@@ -106,7 +106,7 @@ const Events = () => {
   }
 
   // creates a recurring date for each event.
-  data.allContentfulRecurringEvents.edges.forEach(event => {
+  data.allContentfulRecurringEvents.edges.forEach((event) => {
     // this creates the events for the next two weeks.
 
     // creates the dates from the day and time given
@@ -125,6 +125,10 @@ const Events = () => {
     // sets the two different dates to each object
     event.date = eventDate
     event2.date = eventDate2
+
+    //  sets the the recurring week to it.
+    event.week = 1
+    event2.week = 2
 
     // pushes the event objects to upcoming events array list
     upcomingEvents.push(event)
@@ -210,8 +214,10 @@ const Events = () => {
 
   return (
     <section className={Styles.events}>
-      <Link to="events/"><h2>Upcoming Events</h2></Link>
-
+      <Link to="events/">
+        <h2>Upcoming Events</h2>
+      </Link>
+      {console.log(upcomingEvents)}
       <Slider {...settings}>
         {upcomingEvents.map(event => {
           const { id, eventType, eventTitle, date, time } = event
@@ -225,7 +231,7 @@ const Events = () => {
                   {eventType === "Run" ? (
                     <RunIcon id={id} />
                   ) : eventType === "Ride" ? (
-                    <RideIcon id={id}  />
+                    <RideIcon id={id} />
                   ) : eventType === "Walk" ? (
                     <WalkIcon id={id} />
                   ) : eventType === "Meeting" ? (
@@ -237,8 +243,15 @@ const Events = () => {
               </div>
               <div className={Styles.block2}>
                 <h4 className={Styles.title}>{eventTitle}</h4>
-                <h6 className={Styles.time}><ClockIcon /> {time}</h6>
-                <Link to={`events/${id.substr(0, 8)}`} className={Styles.link}>
+                <h6 className={Styles.time}>
+                  <ClockIcon /> {time}
+                </h6>
+                <Link
+                  to={`events/${id.substr(0, 8)}${
+                    event.week ? "/week" + event.week :""
+                  }`}
+                  className={Styles.link}
+                >
                   Full Details &#8594;
                 </Link>
               </div>
