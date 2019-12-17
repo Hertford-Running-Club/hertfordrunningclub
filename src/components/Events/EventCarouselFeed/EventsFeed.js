@@ -2,13 +2,9 @@ import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Slider from "react-slick"
 import Styles from "./EventsFeed.module.scss"
-import RunIcon from "../../images/svgs/RunIcon"
-import RideIcon from "../../images/svgs/RideIcon"
-import "../Instagram/ExperiencesReactSlickOveride.scss"
-import WalkIcon from "../../images/svgs/WalkIcon"
-import MeetingIcon from "../../images/svgs/MeetingIcon"
-import SocialIcon from "../../images/svgs/SocialIcon"
-import ClockIcon from "../../images/svgs/ClockIcon"
+import "../../Instagram/ExperiencesReactSlickOveride.scss"
+import EventTypeIconRender from "../EventTypeIcon/EventTypeIconRenderer"
+import ClockIcon from "../../../images/svgs/ClockIcon"
 
 const Events = () => {
   const data = useStaticQuery(graphql`
@@ -217,30 +213,19 @@ const Events = () => {
       <Link to="events/">
         <h2>Upcoming Events</h2>
       </Link>
-      {console.log(upcomingEvents)}
+
       <Slider {...settings}>
         {upcomingEvents.map(event => {
           const { id, eventType, eventTitle, date, time } = event
           return (
             <div key={id} className={Styles.event}>
               <div className={Styles.block1}>
+                <div className={Styles.datecontainer} >
                 <p className={Styles.date}>{date.substr(8, 2)}</p>
                 <p className={Styles.month}>{months[date.substr(5, 2) - 1]}</p>
-                <div className={Styles.eventicon}>
-                  {console.log(eventType)}
-                  {eventType === "Run" ? (
-                    <RunIcon id={id} />
-                  ) : eventType === "Ride" ? (
-                    <RideIcon id={id} />
-                  ) : eventType === "Walk" ? (
-                    <WalkIcon id={id} />
-                  ) : eventType === "Meeting" ? (
-                    <MeetingIcon id={id} />
-                  ) : eventType === "Social" ? (
-                    <SocialIcon id={id} />
-                  ) : null}
                 </div>
-              </div>
+                <EventTypeIconRender eventType={eventType} id={id}/>
+                </div>
               <div className={Styles.block2}>
                 <h4 className={Styles.title}>{eventTitle}</h4>
                 <h6 className={Styles.time}>

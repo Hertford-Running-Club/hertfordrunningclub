@@ -26,6 +26,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           edges {
             node {
               id
+              day
+              time
             }
           }
         }
@@ -39,16 +41,45 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
+  const getDayIndex = day => {
+    // takes a day of the week as a string value and gives the index value of the day you want.
+    const days = [
+      "sunday",
+      "monday",
+      "tuesday",
+      "wednesday",
+      "thursday",
+      "friday",
+      "saturday",
+      "sunday",
+    ]
+    return days.indexOf(day)
+  }
+
+  const createEventDate = (day, time, daysToAdd = 0) => {
+    // given a day and time create recurring event.
+    day = day.toLowerCase()
+    const dayIndex = getDayIndex(day)
+    let eventDate = new Date() // starts with today's date
+    // sets the new date using the below formula
+    eventDate.setDate(eventDate.getDate() + ((dayIndex + 7 - eventDate.getDay()) % 7) + daysToAdd)
+    return eventDate
+  }
+
+
 
 const EventTemplate = path.resolve(
-    `src/components/Events/EventPageTemplate.js`
+    `src/components/Events/EventPageTemplate/EventPageTemplate.js`
   )
+
+
   // Create pages for each Contentful Recurring Events
   result.data.allContentfulRecurringEvents.edges.forEach(({ node }) => {
-    console.log(node)
 
     for (let index = 1; index < 3; index++) {
       const path = `events/${node.id.substr(0, 8)}/week${index}`
+      let eventDate = createEventDate(node.day, node.time, (index-1)*7)
+
       createPage({
         path,
         component: EventTemplate,
@@ -56,7 +87,8 @@ const EventTemplate = path.resolve(
         // as a GraphQL variable to query for data from the markdown file.
         context: {
           eventid: node.id,
-          week: index
+          week: index,
+          date: eventDate,
         },
       })
       

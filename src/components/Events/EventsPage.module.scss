@@ -1,5 +1,8 @@
 @import "../../basestyles.scss";
 
+// This is page specific Scss File.
+// /events
+
 .events {
   padding: 1em;
   overflow: hidden;
@@ -18,13 +21,12 @@
 .block1 {
   text-align: center;
   flex-wrap: wrap;
- 
 }
 
 .block1 > *{
   margin: 0;
   width: 100%;
-  padding: 0 0.5em;
+  padding: 0.25em 0.5em;
 }
 
 .datecontainer {
@@ -91,14 +93,14 @@
 
 .location,
 .time,
-.terrain {
+.terrain{
   display: inline-block;
 }
 
 .location svg,
 .time svg,
-.terrain svg {
-  max-width: 13px;
+.terrain svg{
+  max-width: 18px;
   max-height: 18px;
   margin-right: 0.5em;
 }

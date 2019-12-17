@@ -2,12 +2,8 @@ import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import Styles from "../components/Events/EventsPage.module.scss"
-import RunIcon from "../images/svgs/RunIcon"
-import RideIcon from "../images/svgs/RideIcon"
+import EventTypeIconRender from "../components/Events/EventTypeIcon/EventTypeIconRenderer"
 import "../components/Instagram/ExperiencesReactSlickOveride.scss"
-import WalkIcon from "../images/svgs/WalkIcon"
-import MeetingIcon from "../images/svgs/MeetingIcon"
-import SocialIcon from "../images/svgs/SocialIcon"
 import LocationIcon from "../images/svgs/LocationIcon"
 import ClockIcon from "../images/svgs/ClockIcon"
 import TerrainIcon from "../images/svgs/TerrainIcon"
@@ -207,19 +203,8 @@ const Events = () => {
                   </p>
                   <p className={Styles.year}>{date.substr(0, 4)}</p>
                 </div>
-                <div className={Styles.eventicon}>
-                  {eventType === "Run" ? (
-                    <RunIcon />
-                  ) : eventType === "Ride" ? (
-                    <RideIcon />
-                  ) : eventType === "Walk" ? (
-                    <WalkIcon />
-                  ) : eventType === "Meeting" ? (
-                    <MeetingIcon />
-                  ) : eventType === "Social" ? (
-                    <SocialIcon />
-                  ) : null}
-                </div>
+                <EventTypeIconRender eventType={eventType} id={id}/>
+
               </div>
               <div className={Styles.block2}>
                 <h4 className={Styles.title}>{eventTitle}</h4>

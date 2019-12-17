@@ -1,17 +1,12 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
-import Layout from "../layout"
-import RunIcon from "../../images/svgs/RunIcon"
-import RideIcon from "../../images/svgs/RideIcon"
-import WalkIcon from "../../images/svgs/WalkIcon"
-import MeetingIcon from "../../images/svgs/MeetingIcon"
-import SocialIcon from "../../images/svgs/SocialIcon"
-import LocationIcon from "../../images/svgs/LocationIcon"
-import ClockIcon from "../../images/svgs/ClockIcon"
-import TerrainIcon from "../../images/svgs/TerrainIcon"
-import Calender from "../../images/svgs/Calender"
-import SpeedometerIcon from "../../images/svgs/SpeedometerIcon"
+import Layout from "../../layout"
+import EventTypeIconRender from "../EventTypeIcon/EventTypeIconRenderer"
+import LocationIcon from "../../../images/svgs/LocationIcon"
+import ClockIcon from "../../../images/svgs/ClockIcon"
+import TerrainIcon from "../../../images/svgs/TerrainIcon"
+import Calender from "../../../images/svgs/Calender"
+import SpeedometerIcon from "../../../images/svgs/SpeedometerIcon"
 import Styles from "./EventPageTemplate.module.scss"
 
 export default ({ data, pageContext }) => {
@@ -33,7 +28,7 @@ export default ({ data, pageContext }) => {
   } else {
     data = data.contentfulRecurringEvents
     data.week = pageContext.week
-    data.date = "test"
+    data.date = pageContext.date.substr(0, 10)
     console.log(data.date)
   }
 
@@ -69,8 +64,6 @@ export default ({ data, pageContext }) => {
 
   return (
     <Layout>
-
-
       <div key={id} className={Styles.event}>
         <h1>{eventTitle}</h1>
         <hr />
@@ -78,23 +71,11 @@ export default ({ data, pageContext }) => {
         <div className={Styles.eventdetails}>
           <div className={Styles.block1}>
             <div className={Styles.datecontainer}>
-            <p className={Styles.date}>{date.substr(8, 2)}</p>
-            <p className={Styles.month}>{months[date.substr(5, 2) - 1]}</p>
+              <p className={Styles.date}>{date.substr(8, 2)}</p>
+              <p className={Styles.month}>{months[date.substr(5, 2) - 1]}</p>
             </div>
-            <div className={Styles.eventicon}>
-                  {console.log(eventType)}
-                  {eventType === "Run" ? (
-                    <RunIcon id={id} />
-                  ) : eventType === "Ride" ? (
-                    <RideIcon id={id} />
-                  ) : eventType === "Walk" ? (
-                    <WalkIcon id={id} />
-                  ) : eventType === "Meeting" ? (
-                    <MeetingIcon id={id} />
-                  ) : eventType === "Social" ? (
-                    <SocialIcon id={id} />
-                  ) : null}
-                </div>
+            <EventTypeIconRender eventType={eventType} id={id}/>
+
           </div>
 
           <div className={Styles.block2}>
@@ -108,11 +89,13 @@ export default ({ data, pageContext }) => {
               <Calender /> {eventType} &nbsp;{" "}
               <span style={{ color: "lightgrey" }}>|</span> &nbsp;{" "}
               <TerrainIcon /> {terrain}{" "}
-              <span style={{ color: "lightgrey" }}>|</span> &nbsp;{" "}
+            </p>
+            <p className={Styles.eventlevel}>
               <SpeedometerIcon /> {eventLevel}
             </p>
             <hr />
-            <div className={description}
+            <div
+              className={description}
               dangerouslySetInnerHTML={{
                 __html: description.childMarkdownRemark.html,
               }}

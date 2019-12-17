@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/Homepage/Hero"
 import Introduction from "../components/Homepage/Introduction"
-import EventsFeed from '../components/Events/EventsFeed'
+import EventsFeed from '../components/Events/EventCarouselFeed/EventsFeed'
 import ClubInfo from "../components/Homepage/ClubInfo"
 import Social from "../components/Homepage/Social"
 import ContactForm from "../components/ContactForm/ContactForm"
