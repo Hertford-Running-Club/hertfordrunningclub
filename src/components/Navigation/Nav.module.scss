@@ -1,0 +1,158 @@
+@import "../../basestyles.scss";
+
+.activePage {
+  color: #f29fc6;
+}
+
+// =====  Navigation Styles =====
+
+.navContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  background: $primary1;
+
+}
+
+// Icons Styles
+.navIcon {
+  width: 10%;
+  max-width: 100px;
+  text-align: left;
+}
+.navIcon img {
+  height: 2.2em;
+}
+
+// Hamburger and Close Block Styles
+.hamburgerContainer {
+  width: 100%;
+}
+.hamburger {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 30px;
+  margin: 0 0 0 auto;
+  box-sizing: border-box;
+}
+.hamburger div {
+  height: 4px;
+  width: 35px;
+  margin: 2px 0 2px auto;
+  box-sizing: border-box;
+  box-shadow: 2px 2px black;
+  background: white;
+}
+.hamburger div:nth-child(2) {
+  width: 40px;
+}
+.closeNavBtn {
+  text-align: right;
+  max-width: 25px;
+  margin: 0 0 0 auto
+}
+.closeNavBtn img {
+  padding: 0.25rem;
+  box-sizing: border-box;
+  max-height: 40px;
+  max-width: 40px;
+}
+
+// Nav Link Styles
+.nav {
+  width: 100%;
+  -webkit-transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.5s;
+}
+
+.navMenu {
+  display: block;
+  padding-inline-start: 0;
+  text-align: left;
+  margin: 0;
+}
+
+.navMenu a {
+  text-decoration: none;
+  // removes visited color change.
+  &:visited {
+    color: unset;
+  }
+}
+
+.navItem {
+  padding: 0.5em;
+  color: white;
+}
+
+.navMenu li {
+  // removes all bullet points in nav menus
+  list-style: none;
+}
+
+.currentNavPage li {
+  // border-bottom: solid 3px $brand-color;
+  text-decoration: underline;
+  text-decoration-color: $secondary1;
+}
+
+.navItemLink {
+  display: block;
+}
+
+@media only screen and (min-width: 599px) {
+  .navContainer {
+    // position: absolute;
+    background: unset;
+    flex-wrap: nowrap;
+    // border-bottom: 1px solid;
+    width: 100%;
+  }
+
+  .nav {
+    flex-wrap: nowrap;
+    align-self: center;
+  }
+
+  .navIcon {
+    width: unset;
+    align-self: center;
+    margin-right: 1%;
+  }
+
+  .navIcon img {
+    width: unset;
+    min-width: unset;
+    max-height: unset;
+    max-width: unset;
+    height: 2.2em;
+  }
+
+  .navMenu {
+    width: unset;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 auto;
+    justify-content: center;
+  }
+
+  .navItem {
+    color: black;
+  }
+
+  .hamburger,
+  .hamburgerContainer {
+    display: none;
+  }
+}
+
+@media (min-width: 767px) {
+  .navContainer {
+    font-size: calc(6px + 1.3vw);
+  }
+}

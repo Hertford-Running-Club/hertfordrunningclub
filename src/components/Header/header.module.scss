@@ -1,6 +1,8 @@
 .header {
     text-align: center;
-    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .logo {
@@ -12,4 +14,32 @@
 .header h1 {
     font-size: 1.2em;
     margin: 0.5em 0;
+}
+
+.nav {
+    order: 1;
+    width:100%;
+    margin: 0 0 1em 0;
+}
+
+.branding {
+    order: 2;
+    margin-top:1em;
+}
+
+
+@media (min-width: 599px) {
+
+
+.nav {
+    order: 2;
+    margin: 1em 0 0 0;
+}
+
+.branding {
+    order: 1
+}
+
+
+
 }

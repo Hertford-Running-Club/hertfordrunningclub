@@ -3,6 +3,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import Styles from "./header.module.scss";
+import Navigation from "../Navigation/Nav";
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -32,12 +33,17 @@ const Header = () => {
 
   return (
     <header className={Styles.header}>
-      <Link to="/">
-        <Img className={Styles.logo} fluid={companyLogo.fluid} alt={companyLogo.description} />
+      <div className={Styles.nav}>
+        <Navigation />
+      </div>
+      <div className={Styles.branding}>
+        <Link to="/">
+          <Img className={Styles.logo} fluid={companyLogo.fluid} alt={companyLogo.description} />
         </Link>
         <h1>
           {siteName}
         </h1>
+      </div>
     </header>
   )
 }

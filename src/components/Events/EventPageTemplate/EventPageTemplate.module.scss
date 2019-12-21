@@ -24,6 +24,12 @@
   padding: 0 0.25em 0 1em;
 }
 
+.block2 > div {
+  margin-bottom: 1em;
+}
+
+
+
 .datecontainer {
   border: solid 1px lightgray;
   border-bottom: none; // prevents doubling bordering in between icon and date.
@@ -42,15 +48,6 @@
   width: 100%;
   padding: 0.25em 0.75em;
   text-transform: uppercase;
-}
-
-.location svg,
-.time svg,
-.terrain svg,
-.eventlevel svg {
-  max-width: 20px;
-  max-height: 16px;
-  margin-right: 0.5em;
 }
 
 .description {

@@ -6,6 +6,7 @@ import LocationIcon from "../../../images/svgs/LocationIcon"
 import ClockIcon from "../../../images/svgs/ClockIcon"
 import TerrainIcon from "../../../images/svgs/TerrainIcon"
 import Calender from "../../../images/svgs/Calender"
+import IconTextWidget from "../SingleWidgets/IconTextWidget"
 import SpeedometerIcon from "../../../images/svgs/SpeedometerIcon"
 import Styles from "./EventPageTemplate.module.scss"
 
@@ -15,8 +16,8 @@ export default ({ data, pageContext }) => {
   // return true if singular event, return false if recurring event
   const isSingularEvent = () =>
     typeof data.contentfulEvents === "object" &&
-    data.contentfulEvents !== null &&
-    data.contentfulRecurringEvents === null
+      data.contentfulEvents !== null &&
+      data.contentfulRecurringEvents === null
       ? true
       : false
 
@@ -74,25 +75,28 @@ export default ({ data, pageContext }) => {
               <p className={Styles.date}>{date.substr(8, 2)}</p>
               <p className={Styles.month}>{months[date.substr(5, 2) - 1]}</p>
             </div>
-            <EventTypeIconRender eventType={eventType} id={id}/>
+            <EventTypeIconRender eventType={eventType} id={id} />
 
           </div>
 
           <div className={Styles.block2}>
-            <p className={Styles.time}>
-              <ClockIcon /> {time}
-            </p>
-            <p className={Styles.location}>
-              <LocationIcon /> {address}
-            </p>
-            <p className={Styles.terrain}>
-              <Calender /> {eventType} &nbsp;{" "}
-              <span style={{ color: "lightgrey" }}>|</span> &nbsp;{" "}
-              <TerrainIcon /> {terrain}{" "}
-            </p>
-            <p className={Styles.eventlevel}>
-              <SpeedometerIcon /> {eventLevel}
-            </p>
+            <div>
+              <IconTextWidget icon={(<ClockIcon /> )} text={time} />
+            </div>
+            <div>
+              <IconTextWidget icon={(<LocationIcon />)} text={address} />
+            </div>
+            <div>
+              <IconTextWidget icon={(<Calender />)} text={eventType} />
+
+              <span style={{ color: "lightgrey", margin: "0 1em" }}>|</span>
+
+              <IconTextWidget icon={(<TerrainIcon />)} text={terrain} />
+            </div>
+
+            <div>
+              <IconTextWidget icon={(<SpeedometerIcon />)} text={eventLevel} />
+            </div>
             <hr />
             <div
               className={description}
