@@ -1,0 +1,27 @@
+@import "../../../basestyles.scss";
+
+.datecontainer {
+    border: solid 1px lightgrey;
+    border-bottom: none; // prevents doubling bordering in between icon and date.
+    padding: 0.25em 0.5em;
+}
+
+.datecontainer > * {
+  margin: 0;
+  width: 100%;
+  padding: 0.2em 0;
+}
+
+.date {
+  color: $secondary3;
+  font-weight: 300;
+  font-size: 1.2em;
+}
+
+.month {
+  text-transform: uppercase;
+}
+
+.year {
+  font-size: 0.7em;
+}

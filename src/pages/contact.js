@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import ContactForm from "../components/ContactForm/ContactForm"
 
 import Layout from "../components/layout"

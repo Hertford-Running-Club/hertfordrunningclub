@@ -1,14 +1,35 @@
 import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
 import Styles from './Introduction.module.scss'
 
-const Introduction = () => (
+const Introduction = () => {
+
+    const data = useStaticQuery(graphql`
+    {
+        allContentfulHomepageTextBlock1 {
+          nodes {
+            id
+            title
+            text {
+              childMarkdownRemark {
+                html
+              }
+            }
+          }
+        }
+      }
+`   )   
+
+      const { title, text } = data.allContentfulHomepageTextBlock1.nodes[0]
+
+    return (
 <section className={Styles.introduction}>
-    <h2>About us</h2>
-    <p>Founded by Nicole and Joe - two people (not too fast, not too slow) who enjoy running around the streets, fields, hills and parks of Hertford.</p>
-    <p>Hertford Running Club is a very friendly, relaxed and welcoming community of runners; from Couch to 5k graduates to experienced runners.</p>
-    <p>Often ‘getting out’ is the hardest part. Nicole and Joe are aiming to make this easier by creating a community of friends who run together, chat and enjoy the space we all live in. Plus, there will occasionally be snacks and treats!</p>
+<h2>{title}</h2>
+<div dangerouslySetInnerHTML={{__html:text.childMarkdownRemark.html}}/>
+
 </section>
-)
+    )
+}
 
 
 export default Introduction

@@ -8,6 +8,7 @@ import TerrainIcon from "../../../images/svgs/TerrainIcon"
 import Calender from "../../../images/svgs/Calender"
 import IconTextWidget from "../SingleWidgets/IconTextWidget"
 import SpeedometerIcon from "../../../images/svgs/SpeedometerIcon"
+import DateBoxWidget from "../SingleWidgets/DateBoxWidget"
 import Styles from "./EventPageTemplate.module.scss"
 
 export default ({ data, pageContext }) => {
@@ -65,23 +66,29 @@ export default ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <div key={id} className={Styles.event}>
+      <div key={`event-${id}`} className={Styles.event}>
         <h1>{eventTitle}</h1>
         <hr />
 
         <div className={Styles.eventdetails}>
           <div className={Styles.block1}>
-            <div className={Styles.datecontainer}>
+            {/* <div className={Styles.datecontainer}>
               <p className={Styles.date}>{date.substr(8, 2)}</p>
               <p className={Styles.month}>{months[date.substr(5, 2) - 1]}</p>
-            </div>
-            <EventTypeIconRender eventType={eventType} id={id} />
+            </div> */}
+            <DateBoxWidget
+              date={date.substr(8, 2)}
+              month={months[date.substr(5, 2) - 1]}
+              year={date.substr(0, 4)}
+            />
+
+            <EventTypeIconRender eventType={eventType} id={`svg-${id}`} />
 
           </div>
 
           <div className={Styles.block2}>
             <div>
-              <IconTextWidget icon={(<ClockIcon /> )} text={time} />
+              <IconTextWidget icon={(<ClockIcon />)} text={time} />
             </div>
             <div>
               <IconTextWidget icon={(<LocationIcon />)} text={address} />

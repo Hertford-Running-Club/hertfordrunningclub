@@ -6,9 +6,10 @@ import EventTypeIconRender from "../components/Events/EventTypeIcon/EventTypeIco
 import "../components/Instagram/ExperiencesReactSlickOveride.scss"
 import LocationIcon from "../images/svgs/LocationIcon"
 import ClockIcon from "../images/svgs/ClockIcon"
+import IconTextWidget from "../components/Events/SingleWidgets/IconTextWidget"
 import TerrainIcon from "../images/svgs/TerrainIcon"
 import Calender from "../images/svgs/Calender"
-
+import DateBoxWidget from "../components/Events/SingleWidgets/DateBoxWidget"
 
 
 const Events = () => {
@@ -97,8 +98,8 @@ const Events = () => {
     // sets the new date using the below formula
     eventDate.setDate(
       eventDate.getDate() +
-        ((dayIndex + 7 - eventDate.getDay()) % 7) +
-        daysToAdd
+      ((dayIndex + 7 - eventDate.getDay()) % 7) +
+      daysToAdd
     )
     eventDate.setHours(time.substr(0, 2))
     eventDate.setMinutes(time.substr(3, 4))
@@ -157,7 +158,7 @@ const Events = () => {
     }
   })
 
-  upcomingEvents.sort(function(a, b) {
+  upcomingEvents.sort(function (a, b) {
     // sorts the date in descending order
     return new Date(b.date) - new Date(a.date)
   })
@@ -183,7 +184,7 @@ const Events = () => {
       <section className={Styles.events}>
         <h2>Events</h2>
 
-        {upcomingEvents.map(event => {
+        {upcomingEvents.map((event, index) => {
           const {
             id,
             eventType,
@@ -194,37 +195,56 @@ const Events = () => {
             terrain,
           } = event
           return (
-            <div key={id} className={Styles.event}>
-              <div className={Styles.block1}>
-                <div className={Styles.datecontainer}>
-                  <p className={Styles.date}>{date.substr(8, 2)}</p>
-                  <p className={Styles.month}>
-                    {months[date.substr(5, 2) - 1]}
-                  </p>
-                  <p className={Styles.year}>{date.substr(0, 4)}</p>
-                </div>
-                <EventTypeIconRender eventType={eventType} id={id}/>
+            <div key={`eventmenu-${id}-${index}`} className={Styles.event}>
 
+              <div className={Styles.block1}>
+                <DateBoxWidget
+                  date={date.substr(8, 2)}
+                  month={months[date.substr(5, 2) - 1]}
+                  year={date.substr(0, 4)}
+                />
+                <EventTypeIconRender
+                  eventType={eventType}
+                  id={`${id}`} 
+                />
               </div>
+
               <div className={Styles.block2}>
                 <h4 className={Styles.title}>{eventTitle}</h4>
+                <div className={Styles.innerblock2}>
 
-                <p className={Styles.time}>
-                  {" "}
-                  <ClockIcon /> {time}
-                </p>
-                <p className={Styles.location}>
-                  <LocationIcon /> {address}
-                </p>
-                <p className={Styles.terrain}>
-                  <Calender /> {eventType} &nbsp; <span style={{color:"lightgrey"}}>|</span> &nbsp; <TerrainIcon /> {terrain}{" "}
-                </p>
+                  <div>
+                    <IconTextWidget 
+                      icon={(<ClockIcon />)} 
+                      text={time} 
+                      />
+                  </div>
+                  <div>
+                    <IconTextWidget 
+                      icon={(<LocationIcon />)} 
+                      text={address} 
+                    />
+                  </div>
+                  <div>
+                    <IconTextWidget 
+                      icon={(<Calender />)} 
+                      text={eventType} 
+                    />
+                    <span style={{ color: "lightgrey", margin: "0 1em" }}>|</span>
+                    <IconTextWidget 
+                      icon={(<TerrainIcon />)} 
+                      text={terrain} 
+                    />
+                  </div>
 
-                <Link to={`events/${id.substr(0, 8)}`} className={Styles.link}>
-                  <button className={Styles.linkbtn}>
-                    Full Details &#8594;
-                  </button>
-                </Link>
+                  <Link 
+                    to={`events/${id.substr(0, 8)}`} 
+                    className={Styles.link}>
+                    <button className={Styles.linkbtn}>
+                      Full Details &#8594; {/*  arrows unicode */}
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           )

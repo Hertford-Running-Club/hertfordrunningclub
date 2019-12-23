@@ -5,6 +5,8 @@ import Styles from "./EventsFeed.module.scss"
 import "../../Instagram/ExperiencesReactSlickOveride.scss"
 import EventTypeIconRender from "../EventTypeIcon/EventTypeIconRenderer"
 import ClockIcon from "../../../images/svgs/ClockIcon"
+import DateBoxWidget from "../SingleWidgets/DateBoxWidget"
+
 
 const Events = () => {
   const data = useStaticQuery(graphql`
@@ -215,15 +217,16 @@ const Events = () => {
       </Link>
 
       <Slider {...settings}>
-        {upcomingEvents.map(event => {
+        {upcomingEvents.map((event, index) => {
           const { id, eventType, eventTitle, date, time } = event
           return (
-            <div key={id} className={Styles.event}>
+            <div key={`${id}-${index}`} className={Styles.event}>
               <div className={Styles.block1}>
-                <div className={Styles.datecontainer} >
-                <p className={Styles.date}>{date.substr(8, 2)}</p>
-                <p className={Styles.month}>{months[date.substr(5, 2) - 1]}</p>
-                </div>
+              <DateBoxWidget
+                  date={date.substr(8, 2)}
+                  month={months[date.substr(5, 2) - 1]}
+                  year={date.substr(0, 4)}
+                />
                 <EventTypeIconRender eventType={eventType} id={id}/>
                 </div>
               <div className={Styles.block2}>
