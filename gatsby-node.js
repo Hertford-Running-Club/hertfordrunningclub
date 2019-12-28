@@ -15,23 +15,32 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(
     `
     {
-        allContentfulEvents {
-          edges {
-            node {
-              id
-            }
-          }
-        }
-        allContentfulRecurringEvents {
-          edges {
-            node {
-              id
-              day
-              time
-            }
+      allContentfulEvents {
+        edges {
+          node {
+            id
           }
         }
       }
+      allContentfulRecurringEvents {
+        edges {
+          node {
+            id
+            day
+            time
+          }
+        }
+      }
+      
+        allContentfulBlogPosts {
+          edges {
+            node {
+              id
+              slug
+            }
+          }
+        }
+      } 
     `
   )
 
@@ -74,6 +83,8 @@ const EventTemplate = path.resolve(
 
 
   // Create pages for each Contentful Recurring Events
+  // ==================================================
+
   result.data.allContentfulRecurringEvents.edges.forEach(({ node }) => {
 
     for (let index = 1; index < 3; index++) {
@@ -96,6 +107,9 @@ const EventTemplate = path.resolve(
 
   })
 
+  // Singular Events create pages
+  // ============================
+
   result.data.allContentfulEvents.edges.forEach(({ node }) => {
     
     const path = `events/${node.id.substr(0, 8)}`
@@ -106,6 +120,28 @@ const EventTemplate = path.resolve(
       // as a GraphQL variable to query for data from the markdown file.
       context: {
         eventid: node.id,
+      },
+    })
+  })
+
+  // Blogs Create Pages
+  // ===================
+
+
+  const blogTemplate = path.resolve(
+    `src/components/blog/BlogTemplate.js`
+  )
+
+  result.data.allContentfulBlogPosts.edges.forEach(({ node }) => {
+    
+    const path = `blog/${node.slug}`
+    createPage({
+      path,
+      component: blogTemplate,
+      // In your template's graphql query, you can use path
+      // as a GraphQL variable to query for data from the markdown file.
+      context: {
+        slug:node.slug
       },
     })
   })

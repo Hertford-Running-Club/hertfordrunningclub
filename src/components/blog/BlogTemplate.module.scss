@@ -1,0 +1,108 @@
+@import "../../basestyles.scss";
+
+.blogContainer {
+  padding: 1em;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.blogContainer h1 {
+  font-weight: 400;
+  font-size: 2.5em;
+  margin: 0.5em 0;
+}
+
+.blogContainer p {
+  margin-bottom: 1em;
+}
+
+.blogInfoWidget {
+  display: flex;
+  margin: 1em 0;
+}
+
+.blogInfoWidget div:nth-child(1) {
+  width: 60px;
+  border-radius: 100px;
+}
+
+.blogInfoWidgetSubContainer {
+  margin: 0 1em;
+  font-size: 0.95em;
+}
+
+.blogInfoWidgetSubContainer p:nth-child(2) {
+  color: rgb(117, 117, 117);
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1em 0;
+}
+
+.categories span {
+  margin: 0.25em;
+  margin-right: 0.25em;
+  padding: 0.5em;
+  border: solid 1px black;
+}
+
+.blogMainContent {
+  background: white;
+  margin: 1rem 0;
+  font-size: 1.1em;
+}
+
+.blogMainContent h1,
+.blogMainContent h2,
+.blogMainContent h3,
+.blogMainContent h4,
+.blogMainContent h5,
+.blogMainContent h6 {
+  margin: 1.1em 0;
+  line-height: 1.75;
+}
+
+.blogMainContent p {
+  line-height: 1.75;
+  margin: 0.75em 0;
+  margin-bottom: 1em;
+  letter-spacing: 0.2px;
+}
+
+.blogMainContent ol,
+.blogMainContent li,
+.blogMainContent ul {
+  line-height: 1.75;
+  list-style: inside;
+  margin: 0.75em 0;
+  letter-spacing: 0.2px;
+  padding-left: 0.5em;
+}
+
+.blogMainContent li > p {
+  display: inline;
+}
+.blogInfoWidget a,
+.blogMainContent a {
+  color: $primary1;
+  font-weight: 700;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.blogMainContent img,
+.blogMainContent div,
+.blogMainContent table {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.blogMainContent th,
+.blogMainContent td {
+  text-align: center;
+  border: solid 1px;
+  padding: 0.5em 0.1em;
+}

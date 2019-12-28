@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from 'prop-types';
 import ActivityIcon from '../../../images/svgs/ActivityIcon'
 import Styles from '../SingleWidgets/SingleWidget.module.scss'
 
@@ -16,6 +17,11 @@ IconTextWidget.defaultProps = {
     text: "default data",
     icon: ActivityIcon
 }
+
+IconTextWidget.propTypes = {
+    text: PropTypes.string,
+    icon: PropTypes.elementType
+  };
 
 export default IconTextWidget
 

@@ -98,6 +98,7 @@ class Navigation extends React.Component {
     let links = [
       { label: 'Home', link: "/" },
       { label: 'Events', link: "/events" },
+      { label: 'Blog', link: "/blog" },
       { label: 'Contact', link: "/contact" }
     ];
 
@@ -108,7 +109,7 @@ class Navigation extends React.Component {
         {/* Brand Logo */}
         {/* <div className={Styles.navIcon}>
           <Link to="/">
-           <img className={Styles.logo} src={logo} alt="Journal Of Z Logo" />
+           <img className={Styles.logo} src={logo} alt="" />
           </Link>
         </div> */}
 
