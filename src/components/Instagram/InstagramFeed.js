@@ -83,8 +83,8 @@ class InstagramFeed extends React.Component {
                             src={image.images.thumbnail.url}
                             srcSet={`
                                     ${image.images.thumbnail.url} 375w,
-                                    ${image.images.low_resolution.url} 767w,
-                                    ${image.images.standard_resolution.url} 1200w,
+                                   ${image.images.low_resolution.url} 1200w,
+                                // ${image.images.standard_resolution.url} 1500w,
                                     `}
                             alt="Instagram"
                         />
