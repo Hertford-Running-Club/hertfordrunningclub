@@ -7,9 +7,6 @@ import Styles from "./BlogTemplate.module.scss";
 
 export default ({ data }) => {
 
-    // const authorDetails = data.allContentfulGeneralInformation.edges[0].node
-    // const blogData = data.contentfulBlogPosts
-
     const { id, title, slug, author, categories, createdAt: publishedDate, image, content, metaTitle, metaDescription } = data.contentfulBlogPosts
 
     return (

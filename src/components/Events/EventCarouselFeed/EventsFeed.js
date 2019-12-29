@@ -2,6 +2,8 @@ import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Slider from "react-slick"
 import Styles from "./EventsFeed.module.scss"
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import "../../Instagram/ExperiencesReactSlickOveride.scss"
 import EventTypeIconRender from "../EventTypeIcon/EventTypeIconRenderer"
 import ClockIcon from "../../../images/svgs/ClockIcon"
