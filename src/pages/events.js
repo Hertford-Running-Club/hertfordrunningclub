@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import Styles from "../components/Events/EventsPage.module.scss"
 import EventTypeIconRender from "../components/Events/EventTypeIcon/EventTypeIconRenderer"
 import "../components/Instagram/ExperiencesReactSlickOveride.scss"
@@ -186,6 +187,7 @@ const Events = () => {
 
   return (
     <Layout>
+      <SEO title="Events" description="A List of Hertford Running Club Events. Come Join us." />
       <section className={Styles.events}>
         <h2>Events</h2>
 

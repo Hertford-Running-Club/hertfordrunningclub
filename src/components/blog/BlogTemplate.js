@@ -14,9 +14,6 @@ export default ({ data }) => {
         <Layout>
             <SEO title={metaTitle} description={metaDescription} />
             <article className={Styles.blogContainer}>
-                {console.log(title)}
-
-
                 <h1>{title}</h1>
                 <div className={Styles.blogInfoWidget}>
                 <Img fluid={author.image.fluid} alt={author.image.description} />
@@ -34,7 +31,6 @@ export default ({ data }) => {
                 <Img
                     fluid={image.fluid}
                     alt={image.description} />
-                    {console.log(image)}
                 <div className={Styles.blogMainContent}dangerouslySetInnerHTML={{ __html: content.childMarkdownRemark.html }} />
             </article>
         </Layout>

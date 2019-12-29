@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/Homepage/Hero"
@@ -10,24 +11,40 @@ import ContactForm from "../components/ContactForm/ContactForm"
 import StravaClubActivity from '../components/Strava/StravaClubActivity'
 import StravaRecentActivity from '../components/Strava/StravaRecentActivity'
 
-const IndexPage = () => (
+const IndexPage = () => {
+
+  const data = useStaticQuery(graphql`
+    {
+      allContentfulGeneralInformation {
+        edges {
+          node {
+            metaDescription
+          }
+        }
+      }
+    }
+  `)
+
+  const { metaDescription } = data.allContentfulGeneralInformation.edges[0].node
+
+return(
   <Layout>
     <SEO
       title="Home"
-      description="A very friendly, relaxed and welcoming community of runners; from Couch to 5k graduates to experienced runners."
+      description={metaDescription}
     />
     <Hero />
     <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
       <Introduction />
       <EventsFeed />
       <ClubInfo />
-      {/* <StravaClubActivity />
-      <StravaRecentActivity /> */}
+      <StravaClubActivity />
+      <StravaRecentActivity />
       <Social />
 
     </div>
     <ContactForm />
   </Layout>
 )
-
+}
 export default IndexPage

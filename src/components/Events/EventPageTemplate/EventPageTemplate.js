@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../../layout"
+import SEO from "../../seo"
 import EventTypeIconRender from "../EventTypeIcon/EventTypeIconRenderer"
 import LocationIcon from "../../../images/svgs/LocationIcon"
 import ClockIcon from "../../../images/svgs/ClockIcon"
@@ -12,7 +13,6 @@ import DateBoxWidget from "../SingleWidgets/DateBoxWidget"
 import Styles from "./EventPageTemplate.module.scss"
 
 export default ({ data, pageContext }) => {
-  console.log(pageContext)
 
   // return true if singular event, return false if recurring event
   const isSingularEvent = () =>
@@ -26,15 +26,13 @@ export default ({ data, pageContext }) => {
     data = data.contentfulEvents
     data.time = data.date.substr(11, 5)
     data.week = ""
-    console.log(data)
+
   } else {
     data = data.contentfulRecurringEvents
     data.week = pageContext.week
     data.date = pageContext.date.substr(0, 10)
-    console.log(data.date)
-  }
 
-  console.log(data)
+  }
 
   const months = [
     "Jan",
@@ -66,16 +64,16 @@ export default ({ data, pageContext }) => {
 
   return (
     <Layout>
+      <SEO
+        title={eventTitle}
+        description="A Hertford Running Club Event. Come Join us."
+      />
       <div key={`event-${id}`} className={Styles.event}>
         <h1>{eventTitle}</h1>
         <hr />
 
         <div className={Styles.eventdetails}>
           <div className={Styles.block1}>
-            {/* <div className={Styles.datecontainer}>
-              <p className={Styles.date}>{date.substr(8, 2)}</p>
-              <p className={Styles.month}>{months[date.substr(5, 2) - 1]}</p>
-            </div> */}
             <DateBoxWidget
               date={date.substr(8, 2)}
               month={months[date.substr(5, 2) - 1]}

@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 
 const ContactPage = () => (
   <Layout>
-    <SEO title="Page two" />
+    <SEO title="Contact Us" description="Contact us at Hertford Running Club for any Memebership or Event Enquires. We look forward to hearing from you."  />
     <ContactForm />
   </Layout>
 )
