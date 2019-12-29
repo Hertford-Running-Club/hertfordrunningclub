@@ -87,7 +87,7 @@ export const query = graphql`
               id
             name
           }
-        createdAt(fromNow:true)
+        createdAt(formatString:"MMM DD")
           author{
             name
           }

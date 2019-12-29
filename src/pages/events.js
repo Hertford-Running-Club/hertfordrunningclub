@@ -128,6 +128,11 @@ const Events = () => {
     event.date = eventDate
     event2.date = eventDate2
 
+    //  sets the the recurring week to it.
+    event.week = 1
+    event2.week = 2
+
+
     // pushes the event objects to upcoming events array list
     upcomingEvents.push(event)
     upcomingEvents.push(event2)
@@ -205,7 +210,7 @@ const Events = () => {
                 />
                 <EventTypeIconRender
                   eventType={eventType}
-                  id={`${id}`} 
+                  id={`${id}`}
                 />
               </div>
 
@@ -214,31 +219,33 @@ const Events = () => {
                 <div className={Styles.innerblock2}>
 
                   <div>
-                    <IconTextWidget 
-                      icon={(<ClockIcon />)} 
-                      text={time} 
-                      />
-                  </div>
-                  <div>
-                    <IconTextWidget 
-                      icon={(<LocationIcon />)} 
-                      text={address} 
+                    <IconTextWidget
+                      icon={(<ClockIcon />)}
+                      text={time}
                     />
                   </div>
                   <div>
-                    <IconTextWidget 
-                      icon={(<Calender />)} 
-                      text={eventType} 
+                    <IconTextWidget
+                      icon={(<LocationIcon />)}
+                      text={address}
+                    />
+                  </div>
+                  <div>
+                    <IconTextWidget
+                      icon={(<Calender />)}
+                      text={eventType}
                     />
                     <span style={{ color: "lightgrey", margin: "0 1em" }}>|</span>
-                    <IconTextWidget 
-                      icon={(<TerrainIcon />)} 
-                      text={terrain} 
+                    <IconTextWidget
+                      icon={(<TerrainIcon />)}
+                      text={terrain}
                     />
                   </div>
 
-                  <Link 
-                    to={`events/${id.substr(0, 8)}`} 
+                  <Link
+                    to={`events/${id.substr(0, 8)}${
+                      event.week ? "/week" + event.week :""
+                    }`}
                     className={Styles.link}>
                     <button className={Styles.linkbtn}>
                       Full Details &#8594; {/*  arrows unicode */}
