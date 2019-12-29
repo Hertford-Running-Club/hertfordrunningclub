@@ -83,11 +83,11 @@ class InstagramFeed extends React.Component {
                             src={image.images.thumbnail.url}
                             srcSet={`
                                     ${image.images.thumbnail.url} 375w,
-                                   ${image.images.low_resolution.url} 1200w,
-                                // ${image.images.standard_resolution.url} 1500w,
                                     `}
                             alt="Instagram"
                         />
+                          {/* //  ${image.images.low_resolution.url} 1200w,
+                                // ${image.images.standard_resolution.url} 1500w, */}
                         <div className={Styles.imageStats}>
                             <span>
                                 <svg width="14px" height="14px" viewBox="0 0 788 726" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" name="likes">
