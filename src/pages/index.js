@@ -21,8 +21,8 @@ const IndexPage = () => (
       <Introduction />
       <EventsFeed />
       <ClubInfo />
-      <StravaClubActivity />
-      <StravaRecentActivity />
+      {/* <StravaClubActivity />
+      <StravaRecentActivity /> */}
       <Social />
 
     </div>
