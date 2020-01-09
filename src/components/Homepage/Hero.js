@@ -34,7 +34,7 @@ export default () => {
     <section className={Styles.hero}>
       <Img className={Styles.image} fluid={image.fluid} />
       <div className={Styles.copycontainer}>
-        <h2 className={Styles.title}>{title}</h2>
+        <h1 className={Styles.title}>{title}</h1>
         <p className={Styles.subtitle}>{subtitle}</p>
       </div>
     </section>

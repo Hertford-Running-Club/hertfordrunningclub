@@ -10,7 +10,7 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.75rem;
   box-sizing: border-box;
   background: $primary1;
 
@@ -106,7 +106,7 @@
 @media only screen and (min-width: 599px) {
   .navContainer {
     // position: absolute;
-    background: unset;
+    // background: unset;
     flex-wrap: nowrap;
     // border-bottom: 1px solid;
     width: 100%;
@@ -142,7 +142,8 @@
   }
 
   .navItem {
-    color: black;
+    // color: black;
+      margin-bottom: 0;
   }
 
   .hamburger,

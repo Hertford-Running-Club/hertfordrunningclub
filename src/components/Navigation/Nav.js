@@ -97,8 +97,10 @@ class Navigation extends React.Component {
     // this will be loaded dynamically in the future
     let links = [
       { label: 'Home', link: "/" },
-      { label: 'Events', link: "/events" },
-      { label: 'Blog', link: "/blog" },
+      { label: 'About Us', link: "/aboutus" },
+      { label: 'Club Info', link: "/clubinfo" },
+      { label: 'Join Us', link: "/joinus" },
+      { label: 'Follow Us', link: "/followus" },
       { label: 'Contact', link: "/contact" }
     ];
 

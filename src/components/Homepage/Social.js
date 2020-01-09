@@ -21,19 +21,16 @@ const Social = () => {
         }
       }
     }
-`   )  
+`   ) 
 
 const { title, text } = data.allContentfulHomepageTextBlock3.nodes[0]
   
   return (
   <section className={Styles.social}>
 
-  <h2>{title}</h2>
+  <h1 className={Styles.title}>{title}</h1>
   <div dangerouslySetInnerHTML={{__html:text.childMarkdownRemark.html}}/>
-    <hr />
 
-    <InstagramFeed loadUserData={true} NumberPhotosToLoad={11} accessToken={`${process.env.GATSBY_INSTAGRAM_ACCESS_TOKEN}`} / >
-  
   </section>
 )
 }

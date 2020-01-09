@@ -24,7 +24,7 @@ const Introduction = () => {
 
     return (
 <section className={Styles.introduction}>
-<h2>{title}</h2>
+<h1 className={Styles.title}>{title}</h1>
 <div dangerouslySetInnerHTML={{__html:text.childMarkdownRemark.html}}/>
 
 </section>
