@@ -264,3 +264,18 @@
 // }
 
 // export default Events
+
+import React from "react"
+
+
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+
+const events = () => (
+  <Layout>
+    <SEO title="Coming Soon" description=""  />
+    <h1 style={{textAlign: "center"}}>Coming Soon</h1>
+  </Layout>
+)
+
+export default events
