@@ -50,9 +50,7 @@ export default () => {
                     
       
       {images.map(image => {
-        return (
-         <Img className="gatsbyimageoverride" key={image.id} style={{height:"50vw"}} fluid={image.fluid} alt={image.description} />
-        )
+        return <Img className="gatsbyimageoverride" key={image.id} fluid={image.fluid} alt={image.description} />
       })}
   
       </Slider>
