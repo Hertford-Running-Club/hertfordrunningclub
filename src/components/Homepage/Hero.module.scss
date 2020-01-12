@@ -1,5 +1,7 @@
 .hero {
     position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .image {
@@ -26,3 +28,4 @@ filter: brightness(0.99);
 .hero .subtitle {
     margin: 0;
 }
+

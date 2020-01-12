@@ -1,0 +1,9 @@
+.gatsbyimageoverride {
+    height: 50vw;
+}
+
+@media(min-width:1200px) {
+    .gatsbyimageoverride {
+        height: 600px;
+    }  
+}

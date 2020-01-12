@@ -12,7 +12,7 @@ in the experiences carousel.  */
   }
 
   .slick-dots {
-    width: 90%;
+    // width: 90%;
     margin: 0 auto;
     bottom: -3em !important;
   }
@@ -20,7 +20,7 @@ in the experiences carousel.  */
 
 @media (min-width: 767px) {
   .slick-slider {
-    padding: 0 1.5em;
+    // padding: 0 1.5em;
   }
 
   .slick-arrow {
@@ -34,16 +34,16 @@ in the experiences carousel.  */
   }
 
   .slick-slider .slick-prev {
-    left: -10px;
+    left: 10px;
   }
 
   .slick-slider .slick-next {
-    right: -10px;
+    right: 10px;
     box-shadow: 0 0 0 black;
   }
   .slick-prev:before,
   .slick-next:before {
-    color: $primary1 !important;
+    color: $secondary3 !important;
   }
 
 }

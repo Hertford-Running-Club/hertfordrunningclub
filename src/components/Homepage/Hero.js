@@ -2,22 +2,27 @@ import React from "react"
 import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
 import Styles from "./Hero.module.scss"
+import Slider from "react-slick"
+import "./hero.scss"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 
 export default () => {
+
   const data = useStaticQuery(graphql`
     {
       allContentfulHomepageHero {
         edges {
           node {
             id
-            image {
-              description
-              fluid {
+            images{
+              id
+              fluid (maxWidth:1300){
                 ...GatsbyContentfulFluid
               }
+              description
             }
-            title
-            subtitle
+           
           }
         }
       }
@@ -25,18 +30,33 @@ export default () => {
   `)
 
   const {
-    image,
-    title,
-    subtitle,
+    images
   } = data.allContentfulHomepageHero.edges[0].node
+
+  const settings = {
+    // centerMode: true,
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    adaptiveHeight: false,
+    arrows: true,
+  }
 
   return (
     <section className={Styles.hero}>
-      <Img className={Styles.image} fluid={image.fluid} />
-      <div className={Styles.copycontainer}>
-        <h1 className={Styles.title}>{title}</h1>
-        <p className={Styles.subtitle}>{subtitle}</p>
-      </div>
+     <Slider {...settings}>
+                    
+      
+      {images.map(image => {
+        return (
+         <Img className="gatsbyimageoverride" key={image.id} style={{height:"50vw"}} fluid={image.fluid} alt={image.description} />
+        )
+      })}
+  
+      </Slider>
+      
     </section>
   )
 }

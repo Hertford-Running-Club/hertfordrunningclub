@@ -46,7 +46,7 @@ return(
       <hr style={{background: "#4f6752", height: "12px"}}/> 
       <Social />
       <hr style={{background: "#f1c753", height: "12px"}}/> 
-      <InstagramFeed loadUserData={true} NumberPhotosToLoad={11} accessToken={`${process.env.GATSBY_INSTAGRAM_ACCESS_TOKEN}`} / >
+      <InstagramFeed loadUserData={true} NumberPhotosToLoad={11} accessToken={`${process.env.GATSBY_INSTAGRAM_ACCESS_TOKEN}`} />
       <hr style={{background: "#4f6752", height: "12px"}}/> 
 
     </div>
