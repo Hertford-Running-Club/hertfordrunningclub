@@ -145,6 +145,8 @@ class InstagramFeed extends React.Component {
                 slidesToScroll: 1,
                 adaptiveHeight: false,
                 arrows: true,
+                autoplay: true,
+                autoplaySpeed: 2000,
                 responsive: [
                   {
                     breakpoint: 599,

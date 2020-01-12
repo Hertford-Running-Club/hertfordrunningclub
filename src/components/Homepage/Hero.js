@@ -34,7 +34,6 @@ export default () => {
   } = data.allContentfulHomepageHero.edges[0].node
 
   const settings = {
-    // centerMode: true,
     dots: true,
     infinite: true,
     speed: 500,
@@ -42,6 +41,8 @@ export default () => {
     slidesToScroll: 1,
     adaptiveHeight: false,
     arrows: true,
+    autoplay: true,
+    autoplaySpeed: 2000
   }
 
   return (

@@ -35,6 +35,7 @@ return(
       description={metaDescription}
     />
     <Hero />
+    <hr style={{background: "#f1c753", height: "12px"}}/>
     <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
       <Introduction />
       <hr style={{background: "#4f6752", height: "12px"}}/>
