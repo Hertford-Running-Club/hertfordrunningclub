@@ -16,7 +16,16 @@ in the experiences carousel.  */
     margin: 0 auto;
     bottom: -3em !important;
   }
+  .slick-slider .slick-prev {
+    left: 10px;
+    z-index: -10; // hides the arrows for mobile
+  }
 
+  .slick-slider .slick-next {
+    right: 10px;
+    box-shadow: 0 0 0 black;
+    z-index: -10; // hides the arrows for mobile
+  }
 
 @media (min-width: 767px) {
   .slick-slider {
@@ -32,15 +41,11 @@ in the experiences carousel.  */
   .slick-arrow:hover {
     transform: scale(2);
   }
-
-  .slick-slider .slick-prev {
-    left: 10px;
-  }
-
+  .slick-slider .slick-prev,
   .slick-slider .slick-next {
-    right: 10px;
-    box-shadow: 0 0 0 black;
+    z-index: 10; // brings the arows out for desktop
   }
+
   .slick-prev:before,
   .slick-next:before {
     color: $secondary3 !important;
