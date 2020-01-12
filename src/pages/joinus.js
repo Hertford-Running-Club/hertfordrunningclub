@@ -24,11 +24,22 @@ const JoinUs = () => {
         
       }
     }
+    allContentfulGeneralInformation {
+        edges{
+          node {
+            membershipForm{
+              file {
+                url
+              }
+            }
+          }
+        }
+      }
   }
 `)
 
 const { title, content, metaTitle, metaDescription } = data.allContentfulJoinUsPage.edges[0].node
-
+const { membershipForm } = data.allContentfulGeneralInformation.edges[0].node
 
 
 return (
@@ -37,6 +48,7 @@ return (
     <section className={Styles.pagecontainer}>
       <h1>{title}</h1>
       <div dangerouslySetInnerHTML={{__html:content.childMarkdownRemark.html}}/>
+      <a href={membershipForm.file.url} target="_blank"><button className={Styles.primarybtn}>Download Form</button></a>
     </section>
   </Layout>
 )

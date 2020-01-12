@@ -1,5 +1,18 @@
+@import "./basestyles.scss";
+
 .pagecontainer {
     padding: 1em;
     max-width: 1000px;
     margin: 0 auto;
+}
+
+.primarybtn {
+    padding: 0.5em 1em;
+    background-color: $primary1;
+    color: white;
+    border: none;
+    border-radius: 0.2em;
+    &:hover{
+        opacity: 0.8;
+    }
 }

@@ -41,7 +41,7 @@ module.exports = {
         background_color: `#182d1b`,
         theme_color: `#182d1b`,
         display: `minimal-ui`,
-        icon: `src/images/HRC_logo_front.png`, // This path is relative to the root of the site.
+        icon: `src/images/HRC_logo_front_favicon.png`, // This path is relative to the root of the site.
       },
     },
     {
