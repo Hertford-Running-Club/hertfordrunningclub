@@ -3,7 +3,7 @@ import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
 import Styles from "./Hero.module.scss"
 import Slider from "react-slick"
-import "./herooverride.scss"
+import "./Herooverride.scss"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
