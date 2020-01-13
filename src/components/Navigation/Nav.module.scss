@@ -162,3 +162,9 @@
     font-size: calc(6px + 1.3vw);
   }
 }
+
+@media (min-width: 1200px) {
+  .navContainer {
+    font-size: 1.25em
+  }
+}
