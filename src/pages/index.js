@@ -25,6 +25,7 @@ const IndexPage = () => {
       }
     }
   `)
+  
 
   const { metaDescription } = data.allContentfulGeneralInformation.edges[0].node
 
