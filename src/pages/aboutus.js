@@ -46,6 +46,8 @@ return(
     <section className={Styles.pagecontainer}>
       <h1>{title}</h1>
       <div dangerouslySetInnerHTML={{__html:content.childMarkdownRemark.html}}/>
+      <br/>
+      <br/>
       <div className={AboutStyles.logos} style={{display: "flex"}}>
       {logos.map((logo)=> (<Img className={AboutStyles.logo} key={logo.id} fixed={logo.fixed} alt={logo.description} />))}
       </div>
