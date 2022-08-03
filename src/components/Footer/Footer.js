@@ -12,7 +12,7 @@ const Footer = () => (
     <div className={Styles.logos}>
       <StravaLogo />
       <InstagramLogo />
-      <Facebook />
+      <FacebookLogo />
     </div>
   </footer>
 )
