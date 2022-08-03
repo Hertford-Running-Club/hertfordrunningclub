@@ -43,7 +43,6 @@ return(
       <ClubInfo /> */}
       <hr style={{background: "#f1c753", height: "12px"}}/> 
       <StravaClubActivity />
-      <StravaRecentActivity />
       <hr style={{background: "#4f6752", height: "12px"}}/> 
       <Social />
       <hr style={{background: "#f1c753", height: "12px"}}/> 
