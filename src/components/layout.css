@@ -46,7 +46,8 @@ a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
   text-decoration: none;
-  color: unset;
+  /*   color: unset; 
+  removed this as its unclear where links are - change back if not suitable*/
 }
 a:active,
 a:hover {
