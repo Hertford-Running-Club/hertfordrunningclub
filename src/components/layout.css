@@ -618,3 +618,9 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+
+main {
+  /* this stops the content being cut off from the fixed footer i've added */
+  padding-bottom: 50px;
+}
