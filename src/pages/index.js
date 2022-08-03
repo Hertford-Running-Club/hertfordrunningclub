@@ -37,17 +37,18 @@ return(
     />
     <Hero />
     <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-      {/* <Introduction />
+      {
+      <Introduction />
       <hr style={{background: "#4f6752", height: "12px"}}/>
       <EventsFeed />
       <ClubInfo /> */}
       <hr style={{background: "#f1c753", height: "12px"}}/> 
       <StravaClubActivity />
-//       <StravaRecentActivity />
+      <StravaRecentActivity />
       <hr style={{background: "#4f6752", height: "12px"}}/> 
       <Social />
-//       <hr style={{background: "#f1c753", height: "12px"}}/> 
-//       <InstagramFeed loadUserData={true} NumberPhotosToLoad={11} accessToken={`${process.env.GATSBY_INSTAGRAM_ACCESS_TOKEN}`} />
+      <hr style={{background: "#f1c753", height: "12px"}}/> 
+      <InstagramFeed loadUserData={true} NumberPhotosToLoad={11} accessToken={`${process.env.GATSBY_INSTAGRAM_ACCESS_TOKEN}`} />
       <hr style={{background: "#4f6752", height: "12px"}}/> 
 
     </div>
