@@ -29,10 +29,8 @@ export default () => {
     }
   `)
 
-  const images1 data.allContentfulHomepageHero.edges[0].node.images
-  const images2 data.allContentfulHomepageHero.edges[1].node.images
-  const images3 data.allContentfulHomepageHero.edges[2].node.images
-  const images = images1.concat(images2,images3)
+  const {images} = data.allContentfulHomepageHero.edges[0].node
+  
 
   const settings = {
     dots: true,
