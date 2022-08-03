@@ -31,18 +31,18 @@ export default () => {
 
   const {
     images
-  } = data.allContentfulHomepageHero.edges[0].node
+  } = data.allContentfulHomepageHero.edges[0].node.concat(data.allContentfulHomepageHero.edges[1].node, data.allContentfulHomepageHero.edges[2].node)
 
   const settings = {
     dots: true,
     infinite: true,
-    speed: 2000,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     adaptiveHeight: false,
     arrows: true,
     autoplay: true,
-    autoplaySpeed: 2000
+    autoplaySpeed: 5000
   }
 
   return (
