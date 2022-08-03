@@ -46,12 +46,14 @@ a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
   text-decoration: none;
+  color: #305c36;
   /*   color: unset; 
   removed this as its unclear where links are - change back if not suitable*/
 }
 a:active,
 a:hover {
   outline-width: 0;
+  color: #5a8360;
 }
 abbr[title] {
   border-bottom: none;
