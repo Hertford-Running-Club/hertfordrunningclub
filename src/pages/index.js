@@ -37,8 +37,7 @@ return(
     />
     <Hero />
     <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-      {
-      <Introduction />
+      {/* <Introduction />
       <hr style={{background: "#4f6752", height: "12px"}}/>
       <EventsFeed />
       <ClubInfo /> */}
