@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 html {
-  font-family: Roboto;
+  /* there was a comment that the font wasn't same across the site so added this -lm  */
+  font-family: Roboto!important;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
